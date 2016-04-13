@@ -29,38 +29,36 @@ namespace ObjectDemo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            fs.Stuinfo = panel1;
-            switch (flag)    //实现开始功能
+            fs.Stuinfo = panel1;  //传入容器存放学生姓名及id
+            if (flag)    //实现开始功能
             {
-                case true:
-                    {
-                        button1.Text = "停止";
-                        if (bsl.StuName.Count == 0)  //抽完后重新读取文件
-                        {
-                            MessageBox.Show("人员已抽完，将重新开始");
-                            Clear();
-                            MassArgs();
-                            button1.Text = "开始";
-                            break;
-                        }
-                        timer1.Enabled = true;
-                        flag = false;
-                        break;
-                    }
-                case false:   //实现停止功能
-                    {
-                        button1.Text = "开始";
-                        fs.AddStuPic(pictureBox1);
-                        fs.AddStuName(label1.Text, label2);
-                        timer1.Enabled = false;
-                        Student.stuname.RemoveAt(index);     //移除文件
-                        Student.stuid.RemoveAt(index);
-                        //listBox1.Items.RemoveAt(index);
-                        //listBox1.SetSelected(index, true);
-                        //label1.
-                        flag = true;
-                        break;
-                    }
+                if (listBox1.GetSelected(index))     //删除选中的同学
+                    listBox1.Items.RemoveAt(index);
+                button1.Text = "停止";
+                if (stu.Stuname.Count == 0)    //抽完后重新读取文件
+                {
+                    MessageBox.Show("人员已抽完，将重新开始");
+                    Clear();
+                    MassArgs();
+                    button1.Text = "开始";
+                }
+                else
+                {
+                    timer1.Enabled = true;
+                    flag = false;
+                }
+                
+            }
+            else     //实现停止功能
+            {
+                button1.Text = "开始";
+                fs.AddStuPic(pictureBox1);  //添加点完的学生照片
+                fs.AddStuName(label1.Text);  //…………姓名
+                timer1.Enabled = false;
+                stu.Stuname.RemoveAt(index);     //移除学生姓名
+                stu.Stuid.RemoveAt(index);
+                //listBox1.SetSelected(index, true);
+                flag = true;
             }
         }
         private void button2_Click(object sender, EventArgs e)
@@ -74,26 +72,26 @@ namespace ObjectDemo
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            index = bsl.StartFind();
+            index = bsl.StartFind();  //返回停止时学生信息的下标，用作移除
         }
-        private void Clear()
+        private void Clear()  //清理学生信息
         {
             stu.Clear();
             fs.Clear();
             bsl.Clear();
-          //  MassArgs();
         }
-        private void MassArgs()
+        private void MassArgs()    //  传入参数
         {
             fs = new FinishStudent();
             bsl = new BeforeStudentList();
             stu = new Student();
-            bsl.Stulist = listBox1;
-            fs.Stuinfo = panel1;
+            bsl.Stulist = listBox1;  
             bsl.Stuname_0 = label1;
             bsl.Stuid_0 = label2;
             bsl.Stupic_0 = pictureBox1;
             bsl.AddStudent();
+           // fs.Stuinfo = panel1;
+           
         }
     }
 }

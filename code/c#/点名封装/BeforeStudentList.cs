@@ -9,12 +9,12 @@ using System.Drawing;
 
 namespace ObjectDemo
 {
-    public class BeforeStudentList : Student
+    public class BeforeStudentList : Student   //未点名学生
     {
-        ListBox stulist;
-        PictureBox stupic_0;
-        Label stuname_0;
-        Label stuid_0;
+        private ListBox stulist;   //学生信息列表
+        private PictureBox stupic_0; //闪动学生的照片
+        private Label stuname_0; //闪动学生姓名
+        Label stuid_0;  //闪动学生的学号
         public PictureBox Stupic_0
         {
             get { return stupic_0; }
@@ -60,38 +60,38 @@ namespace ObjectDemo
             }
         }
 
-        public void AddStudent()
+
+        public new int StartFind()            //开始点名
         {
-            //stuname = new List<string>();
-            //stuid = new List<string>();
+            Random rd = new Random();
+            //int currRnd = rd.Next(0, listBox1.Items.Count);
+            int currRnd = rd.Next(0, Stuid.Count);
+            //pictureBox1.Image = System.Drawing.Bitmap.FromFile(filepath + listBox1.Items[currRnd]);
+            stupic_0.Image = Image.FromFile(stupath + Stuid[currRnd] + ".jpg");
+            stuname_0.Text = Stuname[currRnd];
+            stuid_0.Text = Stuid[currRnd];
+            stulist.SelectedIndex = stulist.FindString(Stuid[currRnd]);  //获取选定项
+            return currRnd;
+        }
+        public void AddStudent()    //读取并添加学生的信息
+        {
+            Stuname = new List<string>();
+            Stuid = new List<string>();
             StreamReader sr = new StreamReader(stupath + "15软件一班花名册.txt", Encoding.Default);
             String line;
             while ((line = sr.ReadLine()) != null)
             {
                 Stulist.Items.Add(line);
                 string[] str = line.Split('\t');
-                stuid.Add(str[0]);
-                stuname.Add(str[1]);
+                Stuid.Add(str[0]);
+                Stuname.Add(str[1]);
             }
         }
-        public new int StartFind()
+        public new void Clear()  //清楚学生的相关信息
         {
-            Random rd = new Random();
-            //int currRnd = rd.Next(0, listBox1.Items.Count);
-            int currRnd = rd.Next(0, stuid.Count);
-            //pictureBox1.Image = System.Drawing.Bitmap.FromFile(filepath + listBox1.Items[currRnd]);
-            stupic_0.Image = Image.FromFile(stupath + stuid[currRnd] + ".jpg");
-            // temp =stuname[currRnd] ;  //将抽到的文件名临时存起来
-            stuname_0.Text = stuname[currRnd];
-            stuid_0.Text = stuid[currRnd];
-           // stulist.SetSelected(currRnd, true);
-            return currRnd;
-        }
-        public new void Clear()
-        {
-            Stupic_0.Image= null;
-            Stuid_0.Text= null;
-            stuname_0 .Text= null;
+            Stupic_0.Image = null;
+            Stuid_0.Text = null;
+            stuname_0.Text = null;
             stulist.Items.Clear();
         }
     }

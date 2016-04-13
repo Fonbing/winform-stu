@@ -7,31 +7,32 @@ using System.Windows.Forms;
 
 namespace ObjectDemo
 {
-   public class FinishStudent:Student
+    public class FinishStudent : Student  //点到的学生
     {
-        int sum_0, sum_1;
-        public Panel stuinfo;
-        public new Label stuname;
+        private int sum_0, sum_1;
+        private Panel stuinfo;
+        private Label stuname;
         // Label label1;
         public Panel Stuinfo
         {
             get { return stuinfo; }
-            set { stuinfo = value;}
+            set { stuinfo = value; }
         }
-        public void AddStuPic(PictureBox pic)  //添加图片
+        //动态生成控件并添加到panel容器中
+        public void AddStuPic(PictureBox pic)  //添加点到的学生照片
         {
-            stupic = new PictureBox();
-            stupic.Width = 50;
-            stupic.Height = 70;
-            stupic.Top = sum_0 / 4 * 100;  //************
-            stupic.Left = sum_0 % 4 * 70;
-            stupic.SizeMode = PictureBoxSizeMode.StretchImage;  //强制图片自适应控件
-            stupic.Image = pic.Image;
+            Stupic = new PictureBox();
+            Stupic.Width = 50;
+            Stupic.Height = 70;
+            Stupic.Top = sum_0 / 4 * 100;  //************
+            Stupic.Left = sum_0 % 4 * 70;
+            Stupic.SizeMode = PictureBoxSizeMode.StretchImage;  //强制图片自适应控件
+            Stupic.Image = pic.Image;
             sum_0++;
             stuinfo.VerticalScroll.Value = stuinfo.VerticalScroll.Minimum;
-            stuinfo.Controls.Add(stupic);
+            stuinfo.Controls.Add(Stupic);
         }
-        public void AddStuName(string name , Label id)  //动态生成标签并添加到panel容器中
+        public void AddStuName(string name)  //添加点到的学生姓名
         {
             stuname = new Label();
             stuname.Width = 70;
@@ -43,10 +44,10 @@ namespace ObjectDemo
             stuname.Text = name;
             stuinfo.Controls.Add(stuname);
         }
-        public new void Clear()
+        public new void Clear()  //清除点到学生的信息
         {
             sum_0 = 0;
-            sum_1 = 1;
+            sum_1 = 0;
             stuinfo.Controls.Clear();
         }
     }
