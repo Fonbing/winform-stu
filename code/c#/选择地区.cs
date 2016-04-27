@@ -25,7 +25,7 @@ namespace SqlDemo
             {
                 comboBox1.Items.Add(data["ProvinceName"]);
             }
-            comboBox1.Text = dt.Rows[0]["ProvinceName"] + "";
+        
         }
         private DataTable GetDataBySql(string sql)
         {
@@ -47,7 +47,7 @@ namespace SqlDemo
                 comboBox2.Items.Clear();
             DataTable dt = GetDataBySql
             ("select * from dbo.Data_City,dbo.Data_Province where dbo.Data_City.ProvinceCode=dbo.Data_Province.ProvinceCode and dbo.Data_Province.ProvinceName='" + comboBox1.SelectedItem + "'");
-            comboBox2.Text = dt.Rows[0]["CityName"] + "";
+         
             foreach (DataRow data in dt.Rows)
             {
                 comboBox2.Items.Add(data["CityName"]);
@@ -60,7 +60,7 @@ namespace SqlDemo
                 comboBox3.Items.Clear();
             DataTable dt = GetDataBySql
            ("select * from dbo.Data_City,dbo.Data_Area where dbo.Data_City.CityCode=dbo.Data_Area.CityCode and dbo.Data_City.CityName='" + comboBox2.SelectedItem + "'");
-            comboBox3.Text = dt.Rows[0]["AreaName"] +"";
+    
             foreach (DataRow data in dt.Rows)
             {
                 comboBox3.Items.Add(data["AreaName"]);
