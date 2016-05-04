@@ -1,0 +1,7 @@
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\BLL\bin\Debug\BLL.dll
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\BLL\bin\Debug\BLL.pdb
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\BLL\bin\Debug\DAL.dll
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\BLL\bin\Debug\DAL.pdb
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\BLL\obj\Debug\BLL.dll
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\BLL\obj\Debug\BLL.pdb

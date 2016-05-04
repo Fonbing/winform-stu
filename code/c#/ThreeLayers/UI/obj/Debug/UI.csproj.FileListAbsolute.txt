@@ -1,0 +1,14 @@
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\UI\bin\Debug\UI.exe.config
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\UI\bin\Debug\UI.exe
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\UI\bin\Debug\UI.pdb
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\UI\bin\Debug\BLL.dll
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\UI\bin\Debug\DAL.dll
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\UI\bin\Debug\BLL.pdb
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\UI\bin\Debug\DAL.pdb
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\UI\obj\Debug\UI.Form1.resources
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\UI\obj\Debug\UI.Properties.Resources.resources
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\UI\obj\Debug\UI.csproj.GenerateResource.Cache
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\UI\obj\Debug\UI.exe
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\UI\obj\Debug\UI.pdb
+E:\文档\Visual Studio 2015\Projects\ThreeLayers\UI\obj\Debug\UI.Form2.resources
