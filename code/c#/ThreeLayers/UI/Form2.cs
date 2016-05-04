@@ -30,5 +30,10 @@ namespace UI
         {
             dataGridView1.DataSource = Login.SetDg(comboBox1.SelectedItem.ToString());
         }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

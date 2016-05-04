@@ -36,6 +36,7 @@ namespace UI
             {
                 MessageBox.Show("登陆成功");
                 f2.Show();
+                this.Hide();
             }
             else if (isLogin == 2)
                 MessageBox.Show("密码错误");
